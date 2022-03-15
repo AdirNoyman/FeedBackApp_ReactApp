@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Button from './shared/Button';
 import RatingSelect from './RatingSelect';
 
-function FeedBackForm() {
+function FeedBackForm({ handelAdd }) {
 	const [text, setText] = useState('');
 	const [btnDisabled, setBtnDisabled] = useState(true);
 	const [message, setMessage] = useState('');
@@ -25,9 +25,23 @@ function FeedBackForm() {
 		setText(e.target.value);
 	};
 
+	const handelSubmit = e => {
+		e.preventDefault();
+
+		if (text.trim().length > 10) {
+			const newFeedback = {
+				text,
+				rating,
+			};
+
+			handelAdd(newFeedback);
+			setText('');
+		}
+	};
+
 	return (
 		<Card>
-			<form>
+			<form onSubmit={handelSubmit}>
 				<h2>How would you rate our service? 🤨</h2>
 				<RatingSelect select={rating => setRating(rating)} />
 				<div className='input-group'>
