@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import FeedbackContext from '../context/FeedbackContext';
 
 function RatingSelect({ select }) {
 	// NOTE: We don't need local state here as it's a duplicate of parent state
@@ -9,6 +10,11 @@ function RatingSelect({ select }) {
 	// }, [feedbackEdit])
 
 	const [selected, setSelected] = useState(10);
+	const { feedbackEdit } = useContext(FeedbackContext);
+
+	useEffect(() => {
+		setSelected(feedbackEdit.item.rating);
+	}, [feedbackEdit]);
 
 	const handleChange = e => {
 		// The + sign turns the value type to a number
