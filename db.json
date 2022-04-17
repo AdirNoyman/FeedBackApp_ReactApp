@@ -6,24 +6,14 @@
       "text": "This is feedback 2 coming from our json mock db"
     },
     {
-      "id": "3",
-      "rating": 7,
-      "text": "This is feedback 3 coming from our json mock db"
-    },
-    {
-      "rating": "9",
-      "text": "New Feed Back item from postman",
-      "id": "XtP2eVQ"
-    },
-    {
       "rating": "5",
       "text": "New Feed Back item from postman 2",
       "id": "6EhZfns"
     },
     {
-      "text": "vvcxvcxvcxvcxvcxvcxvcx",
-      "rating": 7,
-      "id": "NnVjcns"
+      "text": "This is a new item 1000",
+      "rating": 5,
+      "id": "R-J_zZD"
     }
   ]
 }
